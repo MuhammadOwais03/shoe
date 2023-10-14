@@ -1,0 +1,906 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;0,900;0,1000;1,200&display=swap'); 
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {   
+    overflow-x: hidden;
+    display: grid;
+    place-items: center center;
+    overflow-x: hidden;
+    scroll-padding: 0.3rem;
+    scrollbar-color: black;    
+    transition: all 0.5s linear;   
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+    transition: all 0.5s ease-in;
+  }
+  
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+
+::-webkit-scrollbar-thumb {
+    background: #222; 
+}
+  
+ 
+::-webkit-scrollbar-thumb:hover {
+    background: orange; 
+}
+
+/* HEADER */
+header {
+    
+    
+    padding: 0.5rem;
+    box-shadow: 0 0 2px #222;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    z-index: 11111111111;
+    background-color: white;
+    transition: all 0.5s ease-in;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+section {
+    min-height: 100vh;
+    position: relative;
+    min-width: 93%;
+    
+}
+
+/*  */
+
+.nav {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: all 0.5s ease-in;
+    
+    
+    
+   
+}
+
+.nav h1{
+    cursor:default;
+}
+
+.bars {
+    display: none;
+}
+
+.bars button {
+    border: none;
+    
+    padding: 0.2rem;
+    font-size: 1.4rem;
+    background-color: white;
+    transition: all 0.3s ease-in;
+}
+
+
+.bars button:hover {
+    scale: 1.2;
+    border: .6px solid black;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+    
+}
+
+.wrapper a{
+    transition: all 0.3s ease-in;
+}
+
+.wrapper a:hover, .icons a:hover {
+    color: orange;
+    scale: 1.2;
+}
+
+
+.icons a {
+    margin-left: 0.5rem;
+    transition: all 0.3s ease-in;
+    font-size: 1.4rem;
+}
+
+/* HOME */
+
+#home {
+    background: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(0, 0, 0, 0.73)), url("tpb.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slide-container {
+    position: relative;
+}
+
+.slide-container .fa-solid {
+    position: absolute;
+    top: 50%;
+    font-size: 2.5rem;
+    padding: 1%;
+
+    
+   
+    border-radius: 20px;
+    transition: all 0.4s ease-in;
+    cursor: pointer;
+}
+
+.slide-container .fa-solid:hover {
+    background-color: black;
+    color: white;
+    scale: 1.1;
+}
+
+
+
+
+.fa-angle-right {
+    
+    right: 0;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-wrap: wrap;
+    padding: 2rem;
+   
+   
+  
+    
+}
+
+
+.slide-container .Active {
+    display: flex;
+}
+
+.slide {
+    display: none;
+}
+
+.slideContent {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    
+}
+
+.slide .slideContent {
+    flex: 1 1 20rem;
+    padding: 0 5%;
+    
+}
+
+.slide .image {
+    flex: 1 1 30rem;
+    position: relative;
+}
+
+
+
+.slideContent h5 {
+    font-size: 18px;
+    color: red;
+    animation: drag1 .2s ease-in-out;
+}
+
+.slideContent h1 {
+    font-size: 2.5rem;
+    animation: drag2 .6s ease-in-out;
+}
+.slideContent p {
+    font-size: .9rem;
+    animation: drag3 .9s ease-in-out;
+}
+.slideContent .cart {
+    margin-top: 2rem;
+    transition: all 0.7s ease;
+    
+}
+.slideContent .cart a {
+    margin-top: 5rem;
+    padding: 3%;
+    width: 20%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: yellow;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+ 
+
+.slideContent .cart a:hover {
+    background-color: black;
+    color: white;
+    transform: skew(-30deg);
+}
+.slideContent .cart a::before {
+    content: "";
+    width: 2rem;
+    height: 6px;
+    position: absolute;
+    top: 0px;
+    left: 5px;
+   
+    transform: skew(-35deg);
+    background-color: black;
+    transition: 0.5s;
+    animation: motion 3s infinite backwards;
+}
+.slideContent .cart a::after {
+    content: "";
+    width: 2rem;
+    height: 6px;
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+   
+    transform: skew(-35deg);
+    background-color: black;
+    transition: 0.5s;
+    animation: motion 3s infinite backwards;
+}
+ 
+
+.slideContent .cart a:hover::before {
+    transform: translateX(100px) skew(-35deg);
+    background-color: white;
+}
+.slideContent .cart a:hover::after {
+    transform: translateX(-100px) skew(-35deg);
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+.slide img {
+    width: 600px;
+    height: 600px;
+    transform: rotate(-35deg);
+    animation: rotateshoe 1s ease-in-out;
+    animation-fill-mode: forwards;
+   
+}
+
+.service {
+    display: grid;
+    place-items: center center;
+    padding: 2rem;
+    margin: 0 4rem ;
+    
+    background-color: #222;
+}
+
+.service-wrapper{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+}
+
+.ser1 {
+    flex: 1 1 20rem;
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    
+}
+
+.ser1 i {
+    font-size: 2rem;
+    color: orange;
+}
+
+.seri h2{
+    font-size: 46px;
+}
+
+
+/* PRODUCTS */
+
+#products{
+    display: grid;
+    place-items: center;
+}
+#products h1{
+    padding: 1rem;
+    box-shadow: 0 0 2px #222;
+    margin: 2rem;
+    position: relative;
+    letter-spacing: 5px;
+    background-color: white;
+}
+
+
+#products h1 span {
+    color: orange;
+}
+
+.cards-container {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    
+    gap: 2rem 1.5rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3rem;
+    
+}
+
+.card {
+    flex: 1 1 25rem;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 0 2px #222;
+    padding-bottom: 2rem;
+    position: relative;
+    background-color: #FAF9F6;
+    transition: all 0.8s ease;
+}
+
+.card img{
+    width: 250px;
+}
+
+.card h5 {
+    font-size: 1.3rem;
+}
+
+.card h5 span {
+    font-size: 0.8rem;
+    text-decoration: line-through;
+    color: orange;
+}
+
+.card .cart1 {
+    display: inline-block;
+    padding: 0.7rem;
+    min-width: 150px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-radius: 10px 40px 0 80px;
+    font-weight: bold;
+    background-color: orange;
+    transition: all 0.8s ease;
+}
+
+.card .cart1:hover {
+    background-color: black;
+    color: white;
+    border-radius: 80px 0 40px 10px;
+}
+.card:hover {
+    scale: 1.05;
+}
+
+.icon {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    flex-wrap: wrap;
+    bottom: 20px;
+    left: 42%;
+    padding: 0.4rem;
+    width: 0;
+    transition: all 0.8s ease;
+   
+       
+    
+    
+}
+
+.icon a {
+    display: inline-block;
+    padding: 0.9rem;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 2px #222;
+    border-radius: 20px;
+    transition: all 1s ease;
+    transform: translateX(0);
+   
+
+}
+
+.icon a:hover {
+    background-color: black;
+    color: white;
+}
+
+.icon:hover>a:nth-child(1) {
+    transform: translateX(50px);
+}
+.icon:hover>a:nth-child(2) {
+    transform: translateX(-50px);
+}
+
+/* FEATURED PRODUCTS */
+#features {
+    display: grid;
+    place-items: center;
+}
+
+#features h1 {
+    padding: 1rem;
+    box-shadow: 0 0 2px #222;
+    margin: 2rem;
+    position: relative;
+    z-index: 111111111;
+    background-color: white;
+    letter-spacing: 5px;
+}
+#features h1 span {
+    color: orange;
+}
+
+.features-container {
+    display: grid;
+    place-items: center center;
+    margin:2rem;
+    
+}
+
+.feature-card {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    
+    justify-content: center;
+    align-items: center;    
+    position: relative;
+    box-shadow: 0 0 2px #222;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card .image-slider,
+.feature-card .content {
+    flex: 1 1 30rem;
+}
+
+.content {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: self-start;
+    gap: 1rem;
+}
+.content h2 {
+    letter-spacing: 0px;
+    font-weight: bolder;
+}
+
+.content .price {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.content .price span {
+    font-size: 18px;
+    color: orange;
+    font-weight: normal;
+}
+
+.content a {
+    display: inline-block;
+    width: 150px;
+    background-color: orange;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+.content a:hover {
+    background-color: black;
+    scale: 1.1;
+    color: white;
+}
+.image-slider {
+    
+    max-width: 300px;
+    
+}
+
+.image-slider img {
+    width: 100%;
+}
+
+.image-slider .contain-pic {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    top: 0;
+    left: 0;
+}
+
+.image-slider .contain-pic a {
+    display: inline-block;
+    padding: 0.3rem;
+    box-shadow: 0 0 1px #222;
+}
+
+.image-slider .contain-pic a img {
+    width: 60px;
+    height: 60px;
+    
+}
+.stars {
+    color: yellowgreen;
+}
+
+
+/* REVIEW */
+
+.review-container {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    
+  
+    
+    
+}
+
+
+
+#review {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+   
+    align-items: center;
+    justify-content: center; 
+    margin: 0 3rem;
+}
+
+#review h1 {
+    padding: 1rem;
+    box-shadow: 0 0 2px #222;
+    font-weight: bolder;
+    letter-spacing: 4px;
+    font-size: 1.3rem;
+}
+
+#review h1 span {
+    color: orange;
+}
+
+
+.review-card {
+    /* max-width: 1200px; */
+    flex: 1 0 20rem;
+    display: flex;
+    flex-direction: row;
+    flex-flow: column;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 0px 1px rgba(34, 34, 34, 0.9);
+    background-color: #f9f9f9;
+    transition: all 0.4s ease-in;
+}
+
+.review-card img{
+    width: 150px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 65px;
+}
+
+.review-card h2 {
+    font-size: 1.8rem;
+    
+
+}
+.review-card p {
+    text-align: center;
+    
+    
+}
+
+.review-card .stars {
+    color: orange;
+    font-size: 1.3rem;
+}
+
+.review-card:hover {
+    scale: 1.02;
+}
+
+#newsletter {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    
+    align-items: center;
+    margin: 1rem 3rem;
+   
+    
+    
+    
+}
+
+.contletter {
+    max-width: 800px;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    flex: 1 1 20rem;
+    background-color: #f9f9f9;
+   
+    padding: 2rem 3rem;
+}
+
+.contletter form {
+   margin: 0 auto;
+    max-width: 40rem;
+    display: flex;
+}
+
+form input {
+    width: 100%;
+    height: 40px;
+    padding: 0.3rem;
+    color: #333;
+    border: 2px solid black;
+}
+
+form a {
+    display: inline-block;
+    padding: 0.4rem;
+    background-color: orange;
+    text-align: center;
+    border: 2px solid black;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+form a:hover {
+    background-color: black;
+    color: white;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 0.1rem;
+}
+
+.social {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: s;
+
+    
+}
+
+.social a {
+    display: inline-block;
+    padding: 0.3rem;
+    box-shadow: 0 0 2px #222;
+    transition: all 0.5s ease-in-out;
+}
+.social a:hover {
+   scale: 1.1;
+   background-color: black;
+   color: white;
+    
+    
+}
+
+
+
+
+@keyframes rotateshoe {
+    from {
+        transform: rotate(120deg) scale(0.5);
+    } to {
+        transform: rotate(-35deg);
+    }
+    
+}
+
+@keyframes drag1 {
+    from {
+        transform: translateX(134px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes drag2 {
+    from {
+        transform: translateX(-1134px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes drag3 {
+    from {
+        opacity: 0.6;
+        transform: scale(1.9);
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1080px) {
+    .slide {
+        margin-top: 7rem;
+    }
+    .slide img {
+        width: 400px;
+        height: 400px;
+        
+    }
+
+    .review-container {
+        margin-top: 2rem;
+    }
+    
+}
+
+@media screen and (max-width: 778px) {
+    .wrapper {
+        position: absolute;
+        bottom: -290%;
+        flex-flow: column;
+        z-index: 100000;
+        background-color: gainsboro;
+        width: 50%;
+        text-align: center;
+        padding: 1rem;
+        left: -700px;
+        transition: all 0.5s linear;
+        border-radius: 0 25% 0 25%;
+        margin-left: 1rem;
+        
+    }
+
+    .slide {
+        gap: 0.1rem;
+        padding: 0;
+    }
+
+    .slide img {
+        width: 350px;
+        height: 350px;
+       
+    }
+    .slideContent {
+        width: 100%;
+    }
+
+    .active {
+        left: 0;
+    }
+
+    .bars {
+        display: block;
+    }
+    
+}
+
+@media screen and (max-width:450px) {
+    .icon {
+        left: 42%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .slide img {
+        width: 300px;
+        height: 300px;
+       
+    }   
+    .slideContent h1 {
+        font-size: 1.6rem;
+    } 
+    .slideContent h5, 
+    .slideContent p,
+    .slideContent .cart a {
+        font-size: .9rem;
+    }
+}
+
+
+@media screen and (max-width: 293px) {
+    .slide img {
+        width: 200px;
+        height: 200px;
+       
+    }
+
+    .slideContent h1 {
+        font-size: 1.3rem;
+    }
+    
+}
